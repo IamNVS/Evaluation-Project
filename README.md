@@ -113,4 +113,6 @@ python manage.py runserver
 - ✅ External integration (Resend API for emails).
 - ✅ Code quality (comments, unit tests, best practices).
 - ✅ Clear documentation (README, API usage, setup guide).
+- ✅This readme.md is made by help of ChatGPT.
 
+ 
