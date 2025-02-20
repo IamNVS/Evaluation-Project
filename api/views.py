@@ -20,6 +20,6 @@ class SubmitEvaluationRequest(APIView):
         serializer = EvaluationSubmitSerializers(data=request.data)
         if serializer.is_valid():
             evaluation = serializer.save(status="pending")  # Default is "pending"
-            process_evaluation.delay(evaluation.id)  # Call Celery task asynchronously
-            return Response({"id": evaluation.id, "message": "Evaluation request submitted."}, status=status.HTTP_201_CREATED)
+            process_evaluation.delay(evaluation.id_er)  # Call Celery task asynchronously
+            return Response({"id": evaluation.id_er, "message": "Evaluation request submitted."}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
