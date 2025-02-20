@@ -1,13 +1,13 @@
 import time
 import random
 from celery import shared_task
-from .models import EvaluationRequest
 from .email_service import send_email_notification
 
 
 @shared_task
 @shared_task
 def process_evaluation(evaluation_id):
+    from .models import EvaluationRequest
     """Simulates an evaluation process and sends an email notification using SMTP."""
     time.sleep(5)  # Simulate processing delay
 
